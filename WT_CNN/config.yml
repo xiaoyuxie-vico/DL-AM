@@ -1,0 +1,74 @@
+random_split_num: 10
+model_name: 'CNN'
+
+metric_list:
+  - 'mean_absolute_error'
+  - 'mean_relative_error' 
+  - 'mean_squared_error'
+  - 'r2_score'
+
+dataset_dir: './dataset/wavelet_images'
+
+params:
+  '1':  # UTS
+    'label_file': './dataset/labels_uts.txt'
+    'tag': 'UTS'
+    'EPOCH': 20
+    'stepwise': 10
+    'LR': 0.001
+    'batch_size': 8
+    'fine_tune_model': False
+    'fix_test_dataset': True
+    'label_file': './dataset/labels_uts.txt'
+    'test_points_pos': '../archives/ML_AM/data/point_pos/pos_less_points.txt' # less points' pos
+  '2':  # elongation
+    'label_file': './dataset/labels_elongation.txt'
+    'tag': 'Elongation'
+    'EPOCH': 50
+    'stepwise': 50
+    'LR': 0.0003
+    'batch_size': 8
+    'fine_tune_model': False
+    'fix_test_dataset': True
+    'label_file': './dataset/labels_elongation.txt'
+    'test_points_pos': '../archives/ML_AM/data/point_pos/pos_less_points.txt' # less points' pos
+  '3':  # yield stress
+    'label_file': './dataset/labels_yield_stress.txt'
+    'tag': 'Yield stress'
+    'EPOCH': 20
+    'stepwise': 20
+    'LR': 0.0001
+    'batch_size': 8
+    'fine_tune_model': False
+    'fix_test_dataset': True
+    'label_file': './dataset/labels_yield_stress.txt'
+    'test_points_pos': '../archives/ML_AM/data/point_pos/pos_less_points.txt' # less points' pos
+
+test_index_list:
+  - 3$d
+  - 3$f
+  - 5$f
+  - 12$d
+  - 15$d
+  - 6$b
+  - 5$h
+  - 6$g
+  - 12$a
+  - 16$j
+  - 16$d
+  - 8$h
+  - 13$c
+  - 13$a
+  - 10$f
+  - 11$a
+  - 5$i
+  - 6$h
+  - 8$i
+  - 16$b
+  - 13$l
+  - 5$a
+  - 8$g
+  - 15$j
+  - 16$a
+  - 12$h
+  - 10$e

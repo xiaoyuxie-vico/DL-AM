@@ -1,2 +1,3 @@
 # DL-AM
-Codes for Mechanistic data-driven prediction of as-built mechanical properties in metal additive manufacturing.
+
+This respository is an implementation for our paper call "Mechanistic data-driven prediction of as-built mechanical properties in metal additive manufacturing", which submitted to Npj Computational Materials.
