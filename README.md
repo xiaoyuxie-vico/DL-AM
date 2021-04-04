@@ -6,7 +6,7 @@ This respository is an implementation for our paper call "Mechanistic data-drive
 The dataset can be found in [dataset](https://github.com/xiaoyuxie-vico/DL_AM_Data).
 
 # Usage
-`cd WT_CNN && python run.py`
+`cd WT_CNN && python run.py 1`
 
 # Environment
 - Python 2.7
