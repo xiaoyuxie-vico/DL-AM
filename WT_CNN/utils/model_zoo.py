@@ -6,8 +6,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 from sklearn import metrics
 
-from tools import targets_convert
-
 # is_cuda = False
 if torch.cuda.is_available():
     is_cuda = True
@@ -101,4 +99,7 @@ class ResNetRegression(ResNet):
         out = self.relu(out)
         out = self.fc3(out)
         return out
+
+def ResNet18Regression():
+    return ResNetRegression(ResidualBlock)
 

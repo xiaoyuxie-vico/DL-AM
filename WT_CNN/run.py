@@ -28,18 +28,11 @@ from utils.dataset import CustomDataset
 from utils.dataset import parser_batch
 from utils.dataset import split_indices, split_indices_fix_test
 from utils.tools import check_dir
-from ML_AM.utils.logger_helper import init_logger
-from ML_AM.utils.color_printer import printer_bb, printer_rw
 
 
 # config
 config_path = os.path.join(current_path, 'config.yml')
 config = yaml.load(open(config_path, 'r'), Loader=yaml.FullLoader)
-
-# logger
-info_logger = init_logger('info', current_path)
-result_logger = init_logger('result', current_path)
-error_logger = init_logger('error', current_path)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 if torch.cuda.is_available():
@@ -91,7 +84,7 @@ def main():
             # initial model
             net = ResNet18Regression().to(device)
             if config.fine_tune_model:
-                print '[INFO] load fine_tune_model: {}'.format(config.fine_tune_model)
+                print(f'[INFO] load fine_tune_model: {config.fine_tune_model}')
                 checkpoints = torch.load(config.fine_tune_model)
                 net.load_state_dict(checkpoints)
             if is_cuda:
@@ -120,9 +113,9 @@ def main():
 
                     loss_list.append(loss.item())
                     if step % 5 == 0:
-                        print '\t [Loss] idx: {}, cv_num: {}, epoch: {}, step: {}, loss: {}'.format(
-                            idx, cv_num, epoch, step, round(loss.item(), 4))
-                
+                        print(f'\t [Loss] idx: {idx}, cv_num: {cv_num}, \
+                            epoch: {epoch}, step: {step}, loss: {round(loss.item(), 4)}')
+
                 # change lr
                 if epoch % config.stepwise == 0:
                     for param_group in optimizer.param_groups:

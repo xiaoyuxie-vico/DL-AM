@@ -28,7 +28,7 @@ class ConfigParser():
         self.label_file_pred = config['params'][tag_num]['label_file']
         self.test_points_pos = config['params'][tag_num]['test_points_pos']
         self.metric_list = config['metric_list']
-        self.interval = config['interval']
+        # self.interval = config['interval']
         self.test_index_list = config['test_index_list']
         self.fix_test_dataset = config['params'][tag_num].get('fix_test_dataset', None)
         
@@ -39,7 +39,7 @@ def test():
     """
     config_path = '../config.yml'
     config = ConfigParser(config_path, '1')
-    print 'config.metric_list', config.metric_list
+    print('config.metric_list', config.metric_list)
 
 
 if __name__ == "__main__":

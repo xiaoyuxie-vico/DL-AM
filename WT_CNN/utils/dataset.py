@@ -14,12 +14,11 @@ from torch.utils.data import DataLoader
 import torchvision.transforms as transforms
 from torch.utils.data.sampler import SubsetRandomSampler
 
-from tools import combine_multilabel
 
 class CustomDataset(Dataset):
     def __init__(self, root_dir, label_file, category, transform=None):
         self.images = glob.glob('{}/*jpg'.format(root_dir))
-        print '[INFO] total images: {}'.format(len(self.images))
+        print('[INFO] total images: {}'.format(len(self.images)))
         self.root_dir = root_dir
         self.transform = transform
         # self.label_info = self.Normalize(label_file)
@@ -117,9 +116,9 @@ def split_indices(dataset, val_ratio=0.2, test_ratio=0.2, seed_val=None, seed_te
     np.random.shuffle(indices_part)
     train_indices, val_indices = indices_part[val_num:], indices_part[:val_num]
 
-    print '[DATASET] train_indices[:5]', train_indices[:5]
-    print '[DATASET] val_indices[:5]', val_indices[:5]
-    print '[DATASET] test_indices[:5]', test_indices[:5]
+    print('[DATASET] train_indices[:5]', train_indices[:5])
+    print('[DATASET] val_indices[:5]', val_indices[:5])
+    print('[DATASET] test_indices[:5]', test_indices[:5])
     return train_indices, val_indices, test_indices
 
 
@@ -161,10 +160,10 @@ def split_indices_fix_test(dataset, test_index_list, val_ratio=0.16, seed_val=No
         np.random.shuffle(train_indices)
         np.random.shuffle(val_indices)
 
-    print '[DATASET] seed_val', seed_val
-    print '[DATASET] train_indices[:5]', len(train_indices), train_indices[:5]
-    print '[DATASET] val_indices[:5]', len(val_indices), val_indices[:5]
-    print '[DATASET] test_indices[:5]', len(test_indices), test_indices[:5]
+    print('[DATASET] seed_val', seed_val)
+    print('[DATASET] train_indices[:5]', len(train_indices), train_indices[:5])
+    print('[DATASET] val_indices[:5]', len(val_indices), val_indices[:5])
+    print('[DATASET] test_indices[:5]', len(test_indices), test_indices[:5])
     return train_indices, val_indices, test_indices
 
 
