@@ -9,7 +9,7 @@ The dataset can be found in [dataset](https://github.com/xiaoyuxie-vico/DL_AM_Da
 `cd WT_CNN && python run.py 1`
 
 # Environment
-- Python 2.7
+- Python 3
 - PyTorch 1.3.0
 
 # Contact
