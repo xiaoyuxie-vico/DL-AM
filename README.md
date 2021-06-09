@@ -1,4 +1,4 @@
-# Description
+## Description
 
 This respository is an implementation for our paper called ["Mechanistic data-driven prediction of as-built mechanical properties in metal additive manufacturing"](https://www.nature.com/articles/s41524-021-00555-z).
 
